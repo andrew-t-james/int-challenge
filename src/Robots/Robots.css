@@ -3,27 +3,37 @@
   background: #f7f7f7;
   border: 1px solid #f7f7f7;
   display: flex;
+  flex-direction: column;
   font-size: 3rem;
   height: 36rem;
-  justify-content: center;
-  flex-direction: column;
-  width: 40rem;
+  justify-content: flex-start;
   padding: 2rem;
+  position: relative;
+  width: 40rem;
+}
+
+.add-robots-message {
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
 }
 
 .my-robot {
+  align-items: center;
   display: flex;
   font-size: 1.7rem;
-  align-items: center;
-  width: 100%;
   height: 4.5rem;
+  width: 100%;
 }
 
 .my-robot__title,
 .my-robot__color,
 .my-robot__button {
-  padding: 1.4rem 0.5rem;
   background-color: #fff;
+  padding: 1.4rem 0.5rem;
 }
 
 .my-robot__title,
@@ -42,9 +52,9 @@
 }
 
 .my-robot__button {
-  min-width: 24%;
-  font-size: 1.2rem;
   color: blue;
-  text-decoration: underline;
+  font-size: 1.2rem;
+  min-width: 24%;
   padding: 1.69rem 0;
+  text-decoration: underline;
 }

@@ -12,7 +12,7 @@ const Robots = props => {
   );
   return (
     <section className="robot-container">
-      {!props.myRobots.length && <p>Add some Robots</p>}
+      {!props.myRobots.length && <p className="add-robots-message">Add some Robots</p>}
       {renderMyRobots}
     </section>
   );
