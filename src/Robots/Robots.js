@@ -2,10 +2,18 @@ import React from 'react';
 
 import './Robots.css';
 
-const Robots = () => {
+const Robots = props => {
+  const renderMyRobots = props.myRobots.map(robot =>
+    <div key={robot.id} className="my-robot">
+      <p className="my-robot__title">{robot.type}</p>
+      <p className="my-robot__color">{robot.color}</p>
+      <button className="my-robot__button" onClick={props.removeRobot}>Remove</button>
+    </div>
+  );
   return (
     <section className="robot-container">
-      <p>Add some Robots</p>
+      {!props.myRobots.length && <p>Add some Robots</p>}
+      {renderMyRobots}
     </section>
   );
 };
