@@ -40,7 +40,6 @@
 .my-robot__color,
 .my-robot__button {
   border: 1px solid #f7f7f7;
-  border: 1px solid #f7f7f7;
 }
 
 .my-robot__title {
@@ -55,6 +54,6 @@
   color: blue;
   font-size: 1.2rem;
   min-width: 24%;
-  padding: 1.69rem 0;
+  padding: 1.65rem 0;
   text-decoration: underline;
 }
