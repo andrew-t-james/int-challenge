@@ -1,0 +1,6 @@
+.form-container {
+  align-items: center;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+}
