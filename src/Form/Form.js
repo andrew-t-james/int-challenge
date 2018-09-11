@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import './Form.css';
 
@@ -76,3 +77,9 @@ export default class Form extends Component {
     );
   }
 }
+
+Form.propTypes = {
+  robots: PropTypes.ArrayOf(PropTypes.Object),
+  colors: PropTypes.ArrayOf(PropTypes.Object),
+  addRobotToView: PropTypes.func
+};
