@@ -37,7 +37,7 @@ button {
   align-items: center;
   display: flex;
   height: 100vh;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 input[type="submit"] {

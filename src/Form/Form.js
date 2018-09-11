@@ -40,37 +40,45 @@ export default class Form extends Component {
           onSubmit={this.handleSubmit}
         >
           <label htmlFor="robots">Robot Type</label>
-          <select
-            name="robots"
-            id="robots"
-            onChange={this.handleTypeSelect}
-          >
-            <option value="">Select..</option>
-            {robots.map(robot =>
-              <option
-                key={robot.value}
-                value={robot.value}
-              >
-                {robot.value}
-              </option>
-            )}
-          </select>
+          <div className="select">
+            <select
+              name="robots"
+              id="robots"
+              required
+              onChange={this.handleTypeSelect}
+            >
+              <option value="">Select..</option>
+              {robots.map(robot =>
+                <option
+                  key={robot.value}
+                  value={robot.value}
+                >
+                  {robot.value}
+                </option>
+              )}
+            </select>
+            <div className="select__arrow"></div>
+          </div>
           <label htmlFor="colors">Robot Color</label>
-          <select
-            name="colors"
-            id="colors"
-            onChange={this.handleColorSelect}
-          >
-            <option value="">Select...</option>
-            {colors.map(color =>
-              <option
-                key={color.value}
-                value={color.value}
-              >
-                {color.value}
-              </option>
-            )}
-          </select>
+          <div className="select">
+            <select
+              name="colors"
+              id="colors"
+              required
+              onChange={this.handleColorSelect}
+            >
+              <option value="">Select...</option>
+              {colors.map(color =>
+                <option
+                  key={color.value}
+                  value={color.value}
+                >
+                  {color.value}
+                </option>
+              )}
+            </select>
+            <div className="select__arrow"></div>
+          </div>
           <input type="submit" value="Build My Bot"/>
         </form>
       </section>
