@@ -1,35 +1,62 @@
 import React, { Component } from 'react';
 
-import './From.css';
+import './Form.css';
 
 export default class Form extends Component {
+  constructor() {
+    super();
+    this.state = {
+      robot: {}
+    };
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+  }
+
+  handleSelectInputChange = event => {
+    const { value, name } = event.target;
+    console.log(value, name);
+  }
+
   render() {
     const { robots, colors } = this.props;
 
     return (
       <section className="form-container">
-        <form>
+        <form
+          className="form"
+          onSubmit={this.handleSubmit}
+        >
           <label htmlFor="robots">Robot Type</label>
-          <select name="robots" id="robots">
+          <select
+            name="robots"
+            id="robots"
+            onChange={this.handleSelectInputChange}
+          >
             <option value="">Select..</option>
             {robots.map(robot =>
               <option
-                key={robot.robot}
-                value={robot.robot}
+                key={robot.value}
+                value={robot.value}
               >
-                {robot.robot}
+                {robot.value}
               </option>
             )}
           </select>
           <label htmlFor="colors">Robot Color</label>
-          <select name="colors" id="colors">
+          <select
+            name="colors"
+            id="colors"
+            onChange={this.handleSelectInputChange}
+          >
             <option value="">Select...</option>
             {colors.map(color =>
               <option
-                key={color.color}
-                value={color.color}
+                key={color.value}
+                value={color.value}
               >
-                {color.color}
+                {color.value}
               </option>
             )}
           </select>

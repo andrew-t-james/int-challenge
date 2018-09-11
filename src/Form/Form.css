@@ -2,5 +2,12 @@
   align-items: center;
   border: 1px solid red;
   display: flex;
+  height: 40rem;
   justify-content: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
 }

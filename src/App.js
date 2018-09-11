@@ -8,37 +8,25 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      types:[
-        {
-          robot: 'Flying Robot'
-        },
-        {
-          robot: 'Wheeled Robot'
-        },
-        {
-          robot: 'Walking Robot'
-        }
+      robots:[
+        { value: 'Flying Robot' },
+        { value: 'Wheeled Robot' },
+        { value: 'Walking Robot'}
       ],
       colors: [
-        {
-          color: 'Gold'
-        },
-        {
-          color: 'Bronze'
-        },
-        {
-          color: 'Silver'
-        }
+        { value: 'Gold' },
+        { value: 'Bronze' },
+        { value: 'Silver' }
       ]
     };
   }
 
 
   render() {
-    const { types, colors } = this.state;
+    const { robots, colors } = this.state;
     return (
       <main className="main-container">
-        <Form robots={types} colors={colors} />
+        <Form robots={robots} colors={colors} />
         <Robots />
       </main>
     );
