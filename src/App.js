@@ -17,16 +17,27 @@ class App extends Component {
         { value: 'Gold' },
         { value: 'Bronze' },
         { value: 'Silver' }
-      ]
+      ],
+      myRobots: []
     };
   }
 
   addRobotToView = values => {
-    console.log(values);
+    const robot = values;
+    this.setState({
+      myRobots: [
+        ...this.state.myRobots,
+        {
+          ...robot,
+          id: Date.now()
+        }
+      ]
+    });
+    console.log(this.state);
   }
 
   render() {
-    const { robots, colors } = this.state;
+    const { robots, colors, myRobots } = this.state;
     return (
       <main className="main-container">
         <Form
@@ -34,7 +45,9 @@ class App extends Component {
           colors={colors}
           addRobotToView={this.addRobotToView}
         />
-        <Robots />
+        <Robots
+          myRobots={myRobots}
+        />
       </main>
     );
   }
