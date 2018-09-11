@@ -36,6 +36,13 @@ class App extends Component {
     console.log(this.state);
   }
 
+  removeRobot = id => {
+    const myRobots = this.state.myRobots.filter(robot => robot.id !== id);
+    this.setState({
+      myRobots
+    });
+  }
+
   render() {
     const { robots, colors, myRobots } = this.state;
     return (
@@ -47,6 +54,7 @@ class App extends Component {
         />
         <Robots
           myRobots={myRobots}
+          removeRobot={this.removeRobot}
         />
       </main>
     );
