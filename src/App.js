@@ -21,12 +21,19 @@ class App extends Component {
     };
   }
 
+  addRobotToView = values => {
+    console.log(values);
+  }
 
   render() {
     const { robots, colors } = this.state;
     return (
       <main className="main-container">
-        <Form robots={robots} colors={colors} />
+        <Form
+          robots={robots}
+          colors={colors}
+          addRobotToView={this.addRobotToView}
+        />
         <Robots />
       </main>
     );
