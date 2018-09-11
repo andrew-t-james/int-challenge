@@ -79,7 +79,7 @@ export default class Form extends Component {
 }
 
 Form.propTypes = {
-  robots: PropTypes.ArrayOf(PropTypes.Object),
-  colors: PropTypes.ArrayOf(PropTypes.Object),
+  robots: PropTypes.arrayOf(PropTypes.object),
+  colors: PropTypes.arrayOf(PropTypes.object),
   addRobotToView: PropTypes.func
 };
