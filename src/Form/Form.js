@@ -6,17 +6,27 @@ export default class Form extends Component {
   constructor() {
     super();
     this.state = {
-      robot: {}
+      color: null,
+      type: null
     };
   }
 
+
   handleSubmit = event => {
     event.preventDefault();
+    event.target.reset();
+
+    this.props.addRobotToView(this.state);
   }
 
-  handleSelectInputChange = event => {
-    const { value, name } = event.target;
-    console.log(value, name);
+  handleTypeSelect = event => {
+    const { value: type } = event.target;
+    this.setState({ type });
+  }
+
+  handleColorSelect = event => {
+    const { value: color } = event.target;
+    this.setState({ color });
   }
 
   render() {
@@ -32,7 +42,7 @@ export default class Form extends Component {
           <select
             name="robots"
             id="robots"
-            onChange={this.handleSelectInputChange}
+            onChange={this.handleTypeSelect}
           >
             <option value="">Select..</option>
             {robots.map(robot =>
@@ -48,7 +58,7 @@ export default class Form extends Component {
           <select
             name="colors"
             id="colors"
-            onChange={this.handleSelectInputChange}
+            onChange={this.handleColorSelect}
           >
             <option value="">Select...</option>
             {colors.map(color =>
